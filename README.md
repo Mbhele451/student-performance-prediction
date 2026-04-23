@@ -1,6 +1,6 @@
 # Student Performance Prediction
 
-A machine learning project that predicts student marks based on study hours, attendance, and sleep hours using Linear Regression.
+A machine learning project that predicts student marks based on study hours, attendance, and sleep hours using Random Forest regression.
 
 ## Overview
 
@@ -9,7 +9,7 @@ This project builds and trains a predictive model to estimate student performanc
 ## Features
 
 - **Data Generation**: Create synthetic but realistic student performance data
-- **Model Training**: Train a linear regression model on student data
+- **Model Training**: Train a Random Forest regression model on student data
 - **Predictions**: Predict marks for new students with confidence ranges
 - **Visualization**: Comprehensive visualizations including:
   - Actual vs Predicted marks scatter plot
@@ -23,7 +23,7 @@ This project builds and trains a predictive model to estimate student performanc
 ```
 student-performance-prediction/
 ├── #CSV_Generator.py          # Generates synthetic dataset
-├── train_model.py             # Trains the linear regression model
+├── train_model.py             # Trains the Random Forest regression model
 ├── predict.py                 # Makes predictions for new students
 ├── visualize.py               # Creates model analysis visualizations
 ├── student_performance.csv    # Dataset (500 student records)
@@ -63,14 +63,14 @@ This generates 500 student records with study hours, attendance, sleep hours, an
 
 ### 2. Train the Model
 
-Train the linear regression model:
+Train the Random Forest regression model:
 ```bash
 python train_model.py
 ```
 
 **Output:**
 - `student_performance_model.pkl` - The trained model
-- Console output showing dataset shape, MAE, R² score, and feature coefficients
+- Console output showing dataset shape, MAE, R² score, and feature importances
 
 ### 3. Make Predictions
 

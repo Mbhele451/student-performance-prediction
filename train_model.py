@@ -4,6 +4,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, r2_score
 
+#training the model using tree-based regression 
+from sklearn.ensemble import RandomForestRegressor
+
 # Load the dataset
 data = pd.read_csv('student_performance.csv')
 print("Dataset loaded successfully")
@@ -25,8 +28,8 @@ x_train, x_test, y_train, y_test = train_test_split(
 print(f"Training set size: {x_train.shape[0]} samples")
 print(f"Testing set size: {x_test.shape[0]} samples")
 
-# Initialize and fit the Linear Regression model
-model = LinearRegression()
+# Initialize and fit the Random Forest model
+model = RandomForestRegressor(n_estimators=100, random_state=42)
 model.fit(x_train, y_train) # Learning phase
 
 # Predict the marks for the test set
@@ -41,9 +44,8 @@ print(f"R-squared Score: {r2:.2f}")
 
 #Show what the model has learned 
 feature_names = ['StudyHours', 'Attendance', 'SleepHours']
-for name, coef in zip(feature_names, model.coef_):
-    print(f"Coefficient for {name}: {coef:.3f}")
-print(f"Intercept: {model.intercept_:.3f}")
+for name, imp in zip(feature_names, model.feature_importances_):
+    print(f"Feature importance for {name}: {imp:.3f}")
 
 #save the model for future use
 joblib.dump(model, 'student_performance_model.pkl')
