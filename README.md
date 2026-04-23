@@ -6,6 +6,11 @@ A machine learning project that predicts student marks based on study hours, att
 
 This project builds and trains a predictive model to estimate student performance. The model analyzes the relationship between key factors (study time, class attendance, and sleep duration) and final marks, providing insights into how these variables impact academic success.
 
+## Model History
+
+- **Original**: Used Linear Regression for prediction.
+- **Current**: Updated to Random Forest Regression for improved performance and feature importance analysis.
+
 ## Features
 
 - **Data Generation**: Create synthetic but realistic student performance data
